@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-dot-outline"></div>
+    
     <nav class="navbar">
         <div class="nav-brand">Portfolio</div>
         <div class="nav-toggle">
@@ -157,14 +160,35 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // Initialisation AOS
         AOS.init({
             duration: 800,
             once: false,
             mirror: true
         });
+
+        // Initialisation EmailJS
         (function() {
             emailjs.init("60e9WiH1I7NZQ9JQi");
         })();
+
+        // Curseur personnalisé
+        const cursor = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-dot-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.opacity = '1';
+            cursorOutline.style.opacity = '1';
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorOutline.style.left = e.clientX + 'px';
+            cursorOutline.style.top = e.clientY + 'px';
+        });
+
+        window.addEventListener('mouseout', () => {
+            cursor.style.opacity = '0';
+            cursorOutline.style.opacity = '0';
+        });
     </script>
 </body>
 </html> 

@@ -1,3 +1,29 @@
+/* Curseur personnalisé */
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: #3500D3;
+}
+
+.cursor-dot-outline {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(53, 0, 211, 0.3) 0%, rgba(53, 0, 211, 0) 100%);
+}
+
 /* Variables globales */
 :root {
     --primary-color: #3500D3;
