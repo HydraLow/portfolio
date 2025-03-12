@@ -6,6 +6,7 @@
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <nav class="navbar">
@@ -34,16 +35,16 @@
     </section>
 
     <section id="apropos" class="about">
-        <h2>À Propos de Moi</h2>
-        <div class="about-content">
+        <h2 data-aos="fade-down">À Propos de Moi</h2>
+        <div class="about-content" data-aos="fade-up" data-aos-delay="200">
             <div class="about-text">
                 <p>Passionné par le développement web et les nouvelles technologies, je crée des expériences numériques uniques et innovantes.</p>
                 <div class="personal-info">
-                    <div class="info-item">
+                    <div class="info-item" data-aos="fade-right" data-aos-delay="400">
                         <i class="fas fa-graduation-cap"></i>
                         <span>Formation en Développement Web</span>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" data-aos="fade-left" data-aos-delay="600">
                         <i class="fas fa-briefcase"></i>
                         <span>X années d'expérience</span>
                     </div>
@@ -53,30 +54,30 @@
     </section>
 
     <section id="competences" class="skills">
-        <h2>Mes Compétences</h2>
+        <h2 data-aos="fade-down">Mes Compétences</h2>
         <div class="skills-grid">
-            <div class="skill-card">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
                 <i class="fab fa-html5"></i>
                 <h3>HTML5</h3>
                 <div class="progress-bar">
                     <div class="progress" style="width: 90%"></div>
                 </div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fab fa-css3-alt"></i>
                 <h3>CSS3</h3>
                 <div class="progress-bar">
                     <div class="progress" style="width: 85%"></div>
                 </div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
                 <i class="fas fa-video"></i>
                 <h3>Premiere Pro</h3>
                 <div class="progress-bar">
                     <div class="progress" style="width: 85%"></div>
                 </div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
                 <i class="fas fa-palette"></i>
                 <h3>Photoshop/Illustrator</h3>
                 <div class="progress-bar">
@@ -87,9 +88,9 @@
     </section>
 
     <section id="portfolio" class="portfolio">
-        <h2>Mon Portfolio</h2>
+        <h2 data-aos="fade-down">Mon Portfolio</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100">
                 <img src="https://via.placeholder.com/300" alt="Projet 1">
                 <div class="portfolio-overlay">
                     <h3>Projet 1</h3>
@@ -97,7 +98,7 @@
                     <a href="#" class="btn">Voir plus</a>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-aos="flip-right" data-aos-delay="200">
                 <img src="https://via.placeholder.com/300" alt="Projet 2">
                 <div class="portfolio-overlay">
                     <h3>Projet 2</h3>
@@ -109,8 +110,8 @@
     </section>
 
     <section id="contact" class="contact">
-        <h2>Me Contacter</h2>
-        <div class="contact-container">
+        <h2 data-aos="fade-down">Me Contacter</h2>
+        <div class="contact-container" data-aos="fade-up" data-aos-delay="200">
             <form id="contact-form">
                 <div class="form-group">
                     <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -154,7 +155,13 @@
 
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 800,
+            once: false,
+            mirror: true
+        });
         (function() {
             emailjs.init("60e9WiH1I7NZQ9JQi");
         })();
