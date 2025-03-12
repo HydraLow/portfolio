@@ -78,47 +78,25 @@
 
         .cv {
             padding: 80px 20px;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
         }
 
         .cv-container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        .cv-header {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #3500D3;
+        .cv-content {
+            margin-bottom: 40px;
         }
 
-        .cv-header h3 {
+        .cv-content h2 {
             color: #3500D3;
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .cv-timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .cv-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: #3500D3;
+            margin-bottom: 30px;
         }
 
         .cv-download {
-            text-align: center;
             margin-top: 40px;
         }
 
@@ -126,47 +104,21 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 30px;
-            font-size: 1.1rem;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: #3500D3;
+            color: white;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .cv-download .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(53, 0, 211, 0.3);
         }
 
         .cv-download .btn i {
-            font-size: 1.2rem;
-        }
-
-        .cv-timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding-left: 20px;
-        }
-
-        .cv-timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #3500D3;
-        }
-
-        .cv-timeline-item h4 {
-            color: #3500D3;
-            margin: 0 0 5px 0;
-            font-size: 1.2rem;
-        }
-
-        .cv-timeline-item .date {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .cv-timeline-item p {
-            margin: 0;
-            color: #444;
-            line-height: 1.6;
+            font-size: 1.3rem;
         }
     </style>
 </head>
@@ -289,21 +241,10 @@
         <h2 data-aos="fade-down">Mon CV</h2>
         <div class="cv-container" data-aos="fade-up" data-aos-delay="200">
             <div class="cv-content">
-                <div class="cv-header">
-                    <h3>Expérience Professionnelle</h3>
-                </div>
-                <div class="cv-timeline">
-                    <!-- Les expériences seront ajoutées ici -->
-                </div>
-                <div class="cv-header">
-                    <h3>Formation</h3>
-                </div>
-                <div class="cv-timeline">
-                    <!-- Les formations seront ajoutées ici -->
-                </div>
+                <p>Vous pouvez télécharger mon CV complet pour plus de détails sur mon parcours professionnel.</p>
             </div>
             <div class="cv-download">
-                <a href="documents/cv.pdf" class="btn primary" target="_blank">
+                <a href="documents/cv.pdf" class="btn" target="_blank">
                     <i class="fas fa-download"></i> Télécharger mon CV
                 </a>
             </div>
