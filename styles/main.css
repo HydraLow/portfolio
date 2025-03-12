@@ -29,16 +29,16 @@
 
 /* Effet de survol */
 .cursor-dot.cursor-hover {
-    transform: translate(-50%, -50%) scale(2.5);
+    transform: translate(-50%, -50%) scale(1.5);
     background: #3500D3;
-    box-shadow: 0 0 20px rgba(53, 0, 211, 0.8);
+    box-shadow: 0 0 10px rgba(53, 0, 211, 0.5);
 }
 
 .cursor-dot-outline.cursor-hover {
-    transform: translate(-50%, -50%) scale(2);
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle, rgba(53, 0, 211, 0.8) 0%, rgba(53, 0, 211, 0) 100%);
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(53, 0, 211, 0.4) 0%, rgba(53, 0, 211, 0) 100%);
 }
 
 @keyframes pulseOutline {
