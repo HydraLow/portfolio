@@ -175,15 +175,37 @@
         // Curseur personnalisé
         const cursor = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-dot-outline');
+        
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        
+        function updateCursor() {
+            const deltaX = mouseX - cursorX;
+            const deltaY = mouseY - cursorY;
+            
+            cursorX += deltaX * 0.2;
+            cursorY += deltaY * 0.2;
+            
+            cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+            cursorOutline.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+            
+            requestAnimationFrame(updateCursor);
+        }
 
         // Mouvement du curseur
         document.addEventListener('mousemove', (e) => {
             cursor.style.opacity = '1';
             cursorOutline.style.opacity = '1';
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorOutline.style.left = e.clientX + 'px';
-            cursorOutline.style.top = e.clientY + 'px';
+            
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            if (cursorX === 0) {
+                cursorX = e.clientX;
+                cursorY = e.clientY;
+            }
         });
 
         // Effet de survol
@@ -201,10 +223,15 @@
         });
 
         // Cache le curseur quand il quitte la fenêtre
-        document.addEventListener('mouseout', () => {
-            cursor.style.opacity = '0';
-            cursorOutline.style.opacity = '0';
+        document.addEventListener('mouseout', (e) => {
+            if (e.relatedTarget === null) {
+                cursor.style.opacity = '0';
+                cursorOutline.style.opacity = '0';
+            }
         });
+
+        // Démarre l'animation
+        requestAnimationFrame(updateCursor);
     </script>
 </body>
 </html> 
