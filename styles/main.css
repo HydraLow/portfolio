@@ -260,8 +260,15 @@ h2::after {
     border: 1px solid rgba(53, 0, 211, 0.2);
 }
 
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 input, textarea {
