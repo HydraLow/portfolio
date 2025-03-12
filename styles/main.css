@@ -3,14 +3,11 @@
 .cursor-dot-outline {
     pointer-events: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     opacity: 0;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
     z-index: 9999;
-    will-change: transform;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .cursor-dot {
@@ -35,7 +32,6 @@
     transform: translate(-50%, -50%) scale(2.5);
     background: #3500D3;
     box-shadow: 0 0 20px rgba(53, 0, 211, 0.8);
-    transition: transform 0.3s ease;
 }
 
 .cursor-dot-outline.cursor-hover {
@@ -43,7 +39,6 @@
     width: 60px;
     height: 60px;
     background: radial-gradient(circle, rgba(53, 0, 211, 0.8) 0%, rgba(53, 0, 211, 0) 100%);
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 @keyframes pulseOutline {
