@@ -8,7 +8,7 @@
     border-radius: 50%;
     opacity: 0;
     transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+    transition: all 0.3s ease;
     z-index: 9999;
 }
 
@@ -16,7 +16,6 @@
     width: 8px;
     height: 8px;
     background: #3500D3;
-    box-shadow: 0 0 10px rgba(53, 0, 211, 0.5);
 }
 
 .cursor-dot-outline {
@@ -30,22 +29,14 @@
     cursor: none !important;
 }
 
-/* Effet de survol pour les éléments interactifs */
-a:hover ~ .cursor-dot,
-button:hover ~ .cursor-dot,
-.btn:hover ~ .cursor-dot,
-input:hover ~ .cursor-dot,
-textarea:hover ~ .cursor-dot {
+/* Effet de survol */
+.cursor-dot.cursor-hover {
     transform: translate(-50%, -50%) scale(2.5);
     background: #3500D3;
     box-shadow: 0 0 20px rgba(53, 0, 211, 0.8);
 }
 
-a:hover ~ .cursor-dot-outline,
-button:hover ~ .cursor-dot-outline,
-.btn:hover ~ .cursor-dot-outline,
-input:hover ~ .cursor-dot-outline,
-textarea:hover ~ .cursor-dot-outline {
+.cursor-dot-outline.cursor-hover {
     transform: translate(-50%, -50%) scale(2);
     width: 60px;
     height: 60px;

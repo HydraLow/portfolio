@@ -176,7 +176,8 @@
         const cursor = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-dot-outline');
 
-        window.addEventListener('mousemove', (e) => {
+        // Mouvement du curseur
+        document.addEventListener('mousemove', (e) => {
             cursor.style.opacity = '1';
             cursorOutline.style.opacity = '1';
             cursor.style.left = e.clientX + 'px';
@@ -185,7 +186,22 @@
             cursorOutline.style.top = e.clientY + 'px';
         });
 
-        window.addEventListener('mouseout', () => {
+        // Effet de survol
+        const links = document.querySelectorAll('a, button, .btn, input, textarea');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                cursorOutline.classList.add('cursor-hover');
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                cursorOutline.classList.remove('cursor-hover');
+            });
+        });
+
+        // Cache le curseur quand il quitte la fenêtre
+        document.addEventListener('mouseout', () => {
             cursor.style.opacity = '0';
             cursorOutline.style.opacity = '0';
         });
