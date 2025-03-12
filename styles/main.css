@@ -24,6 +24,29 @@
     background: radial-gradient(circle, rgba(53, 0, 211, 0.3) 0%, rgba(53, 0, 211, 0) 100%);
 }
 
+/* Cache le curseur par défaut */
+* {
+    cursor: none !important;
+}
+
+/* Effet de survol pour les éléments interactifs */
+a:hover ~ .cursor-dot,
+button:hover ~ .cursor-dot,
+.btn:hover ~ .cursor-dot,
+input:hover ~ .cursor-dot,
+textarea:hover ~ .cursor-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+a:hover ~ .cursor-dot-outline,
+button:hover ~ .cursor-dot-outline,
+.btn:hover ~ .cursor-dot-outline,
+input:hover ~ .cursor-dot-outline,
+textarea:hover ~ .cursor-dot-outline {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: radial-gradient(circle, rgba(53, 0, 211, 0.5) 0%, rgba(53, 0, 211, 0) 100%);
+}
+
 /* Variables globales */
 :root {
     --primary-color: #3500D3;
