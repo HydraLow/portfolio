@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test React</title>
+    <link rel="stylesheet" href="css/InfiniteScroll.css" />
+    
+    <!-- Scripts React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test du Composant React InfiniteScroll</h1>
+        
+        <div id="react-test"></div>
+    </div>
+    
+    <script type="text/babel">
+        // Version simplifiée du composant InfiniteScroll
+        const SimpleGallery = () => {
+            const photos = [
+                "photos/image00001.jpg",
+                "photos/image00002.jpg",
+                "photos/image00003.jpg",
+                "photos/image00004.jpg",
+                "photos/image00005.jpg"
+            ];
+            
+            return (
+                <div style={{textAlign: 'center'}}>
+                    <h2>Galerie Simple</h2>
+                    <div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center'}}>
+                        {photos.map((photo, index) => (
+                            <div key={index} style={{width: '200px', height: '200px'}}>
+                                <img 
+                                    src={photo} 
+                                    alt={`Photo ${index+1}`} 
+                                    style={{width: '100%', height: '100%', objectFit: 'cover'}} 
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+        
+        // Rendu du composant
+        ReactDOM.render(
+            <SimpleGallery />,
+            document.getElementById('react-test')
+        );
+    </script>
+</body>
+</html> 
