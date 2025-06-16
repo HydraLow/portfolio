@@ -319,6 +319,81 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(53, 0, 211, 0.3);
         }
+        
+        /* Styles pour la section vidéos */
+        .videos {
+            padding: 80px 20px;
+            background-color: #0D0D0D;
+        }
+        
+        .videos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .videos-description {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .video-item {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding-bottom: 20px;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(53, 0, 211, 0.2);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .video-item h3 {
+            color: #fff;
+            margin: 20px 0 10px;
+            padding: 0 20px;
+        }
+        
+        .video-item p {
+            color: #ccc;
+            padding: 0 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="intro-active">
@@ -345,6 +420,7 @@
             <li><a href="#apropos">À Propos</a></li>
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#videos">Vidéos</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -448,6 +524,31 @@
             <div class="carousel-controls">
                 <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i> Précédent</button>
                 <button class="carousel-btn" id="nextBtn">Suivant <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="videos">
+        <h2 data-aos="fade-down">Mes Projets Audiovisuels</h2>
+        <div class="videos-container" data-aos="fade-up" data-aos-delay="200">
+            <p class="videos-description">Découvrez mes réalisations audiovisuelles disponibles sur YouTube.</p>
+            
+            <div class="video-grid">
+                <div class="video-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/pfUtOySPC4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3>Projet Audiovisuel 1</h3>
+                    <p>Une de mes réalisations audiovisuelles où j'ai pu exprimer ma créativité et ma vision artistique.</p>
+                </div>
+                
+                <div class="video-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UFnsJs0ptSo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3>Projet Audiovisuel 2</h3>
+                    <p>Un autre exemple de mon travail en production vidéo, démontrant mes compétences techniques et créatives.</p>
+                </div>
             </div>
         </div>
     </section>
