@@ -1,0 +1,17 @@
+{
+  "headers": [
+    {
+      "source": "/documents/(.*).pdf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=cv.pdf"
+        }
+      ]
+    }
+  ]
+} 
