@@ -1,0 +1,8 @@
+# Définir le type MIME pour les fichiers PDF
+AddType application/pdf .pdf
+
+# Forcer le téléchargement des fichiers PDF
+<FilesMatch "\.pdf$">
+    ForceType application/octet-stream
+    Header set Content-Disposition "attachment"
+</FilesMatch> 

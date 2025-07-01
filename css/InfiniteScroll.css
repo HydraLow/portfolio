@@ -1,0 +1,30 @@
+.infinite-scroll-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  cursor: grab;
+}
+
+.infinite-scroll-container {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.infinite-scroll-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background-color: #1a1a1a;
+}
+
+.infinite-scroll-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+} 
